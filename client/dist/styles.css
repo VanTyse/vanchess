@@ -1,0 +1,64 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 564px;
+    height: 564px;
+    border: 2px solid gray;
+}
+
+.square{
+    width: 70px;
+    height: 70px;
+    /* position: relative; */
+}
+
+.square.white{
+    background-color: #e5e5e5;
+}
+
+.square.black{
+    background-color: darkblue;
+}
+
+.square.square-clicked{
+    background-color: green;
+}
+
+
+.show-square-id{
+    display: none;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+}
+
+.piece{
+    display: block;
+    width: 70px;
+    padding: 13px;
+    position: absolute;
+    left: calc((var(--y) * 70px) + 35px);
+    top: calc((var(--x) * 70px) + 35px);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.possible-move{
+    background-color: red !important;
+}
